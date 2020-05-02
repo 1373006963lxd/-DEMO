@@ -1,0 +1,39 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/user?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai
+    username: root
+    password: 1373006963lxd
+
+mybatis:
+  mapper-locations:
+    - classpath:mapper/*.xml
+    - classpath*:com/**/mapper/*.xml
+
+redis:
+  host: localhost
+  database: 0
+  port: 6379
+  password:
+  jedis:
+    pool:
+      max-active: 8
+      max-wait: -1ms
+      max-idle: 8
+      min-idle: 0
+  timeout: 3000ms
+  key:
+    prefix:
+      authCode: "portal:authCode:"
+    expire:
+      authCode: 120
+
+rabbitmq:
+  host: localhost
+  port: 15672
+  virtual-host: /mall
+  username: mall
+  password: mall
+  publisher-confirms: true
