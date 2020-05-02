@@ -1,7 +1,9 @@
 package com.didi.study.Result;
 
+import com.didi.study.dto.EsQuestion;
 import com.didi.study.resultEnum.ResultEnum;
 import lombok.Data;
+import org.springframework.data.domain.Page;
 
 /**
  * @auther li xiao dong
@@ -19,6 +21,8 @@ public class ResultComment<T> {
         this.message=message;
         this.data=data;
     }
+
+
     public static<T> ResultComment<T> success(T data){
         return new ResultComment<T>(ResultEnum.SUCCESS.getCode(),ResultEnum.SUCCESS.getMessage(),data);
     }
